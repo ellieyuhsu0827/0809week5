@@ -1,113 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Boostrap Index</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    week5HWform
+  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
+  <link href="https://fonts.google.com/specimen/roboto+mono?query=robo" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+
+</head>
+
+<body>
+  <!-- 左側主選單 -->
+  <nav class="d-flex flex-column bg-light justify-content-between pt-6 pb-5">
+    <ul class="nav flex-column ">
+      <a class="logo mb-6 p-0 ms-5" aria-current="page" href="#">
+        <img src="./assets/images/logo-ANSWER.svg" alt="logo">
+      </a>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3 ">
+            assessment
+          </span>
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3">
+            question_answer
+          </span>
+          Question
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3">
+            assignment
+          </span>
+          Assignment
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3">
+            video_library
+          </span>
+          Course
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3">
+            supervisor_account
+          </span>
+          Admin
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <span class="material-icons me-3">
+            settings
+          </span>
+          Settings
+        </a>
+      </li>
+    </ul>
+    <div class="user_id d-flex align-items-center ms-5">
+      <div class="flex-shrink-0">
+        <img class="user_photo rounded-circle"
+          src="https://images.unsplash.com/photo-1514794749374-fb67509dbb7f?ixlib=rb-1.2.1&ixid=eyjhchbfawqiojeymdd9&auto=format&fit=crop&w=2000&q=80"
+          alt="...">
+      </div>
+      <div class="user_info ms-3">
+        <p class="user_name fw-bold mb-0">Andy Chen</p>
+        <p class="user_email mb-0">andy0401@mail.com</p>
+      </div>
+    </div>
+  </nav>
+  
+<!-- 右邊主頁 -->
+<div class="main p-5">
+  <!-- 頁面主標與下拉選單 -->
+  <div class="sub_nav d-flex align-items-center">
+    <h1 class="title fs-2 fw-bold me-6 mb-0">Assignment</h1>
+    <div class="dropdown">
+      <button class="btn dropdown-toggle d-flex align-items-center fw-bold" type="button" id="dropdownMenuButton1"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        All Courses
+        <span class="material-icons text-success">
+          expand_more
+        </span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+    <ul class="sub_navicon ms-auto d-flex d-grid gap-4 mb-0">
+      <li class="d-flex align-items-center">
+        <a href="">
+          <span class="material-icons align-middle">
+            search
+          </span>
+        </a>
+      </li>
+      <li class="d-flex align-items-center">
+        <a href="">
+          <span class="material-icons align-middle">
+            notifications_active
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content d-flex justify-content-between row">
+    <!-- 主內容左下拉選單 -->
+    <div class="assignment_list col-4">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle d-flex align-items-center fw-bold" type="button" id="dropdownMenuClickable"
+          data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+          All (4)
+          <span class="material-icons text-success">
+            expand_more
+          </span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <ul class="dropdown-menu overflow-hidden" aria-labelledby="dropdownMenuClickable">
+          <li>
+            <a class="dropdown-item " href="#">
+              <div class="d-flex w-100 justify-content-between chapter fs-xs ">
+                <p class="mb-0">Chapter Assignment 2</p>
+                <p class="mb-0">4 hrs ago</p>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <p class="fw-bold mb-0">Please check this file…</p>
+                <p class="message_from fs-xs mb-0">Emily Wang</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <div class="d-flex w-100 justify-content-between chapter fs-xs">
+                <p class="mb-0">Chapter Assignment 1</p>
+                <p class="mb-0">12 hrs ago</p>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <p class="fw-bold mb-0">My Homework</p>
+                <p class="message_from fs-xs mb-0">Tony Wei</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <div class="d-flex w-100 justify-content-between chapter fs-xs">
+                <p class="mb-0">Final Assignment</p>
+                <p class="mb-0">18 hrs ago</p>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <p class="fw-bold mb-0">Have a problem with this…</p>
+                <p class="message_from fs-xs mb-0">Tony Wei</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <div class="d-flex w-100 justify-content-between chapter fs-xs">
+                <p class="mb-0">Final Assignment</p>
+                <p class="mb-0">19 hrs ago</p>
+              </div>
+              <div class="d-flex w-100 justify-content-between align-items-center">
+                <p class="fw-bold mb-0">Did I do it right?</p>
+                <p class="message_from fs-xs mb-0">Christina Lin</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- 右對話卡片 -->
+    <div class="comments col-8">
+      <span class="number mb-2 fs-xs">2 comments</span>
+      <div class="card">
+        <div class="card-header d-flex align-items-center justify-content-between">
+          <div>
+            <p class="message_from fs-xs mb-0">Chapter Assignment 2 / HTML&CSS</p>
+            <h5 class="mb-0 fs-6">Please check this file for me, thanks!</h5>
+          </div>
+          <a class="link-dark material-icons" href="#">more_vert</a>
+        </div>
+        <div class="card-body">
+          <div class="query">
+            <div class="user_id d-flex align-items-center mb-3">
+              <div class="flex-shrink-0">
+                <img class="user_photo rounded-circle"
+                  src="https://images.unsplash.com/photo-1504051771394-dd2e66b2e08f?ixlib=rb-1.2.1&ixid=eyjhchbfawqiojeymdd9&auto=format&fit=crop&w=2134&q=80"
+                  alt="...">
+              </div>
+              <div class="user_info ms-2">
+                <p class="user_name fw-bold mb-0">Emily Wang</p>
+                <p class="user_email mb-0 fs-xs">10:38 AM (4 hours ago)</p>
+              </div>
+            </div>
+            <div class="message ms-6">
+              <p>Hi Teacher, the attached file is my homework of chapter 2. And here comes a
+                question: Why in the
+                following code the height of the <span class="text-primary">div</span> is bigger than the height of the
+                <span class="text-primary">img</span> ? There is a gap below the
+                image, but it doesn’t seems to be a padding/margin. <br> What is the gap or extra space below image?
+              </p>
+            </div>
+
+            <a href="#" class="btn btn-light border ms-6 mb-3 fw-bold" download="HW-2-David.zip"><span
+                class="material-icons align-middle ">attach_file</span>HW-2-David.zip</a>
+          </div>
+          <div class="reply collapse multi-collapse show" id="collapseExample2">
+            <div class="user_id d-flex align-items-center mb-3">
+              <div class="flex-shrink-0">
+                <img class="user_photo rounded-circle"
+                  src="https://images.unsplash.com/photo-1514794749374-fb67509dbb7f?ixlib=rb-1.2.1&ixid=eyjhchbfawqiojeymdd9&auto=format&fit=crop&w=2000&q=80"
+                  alt="...">
+              </div>
+              <div class="user_info ms-2">
+                <p class="user_name fw-bold mb-0">Andy Chen (You)</p>
+                <p class="user_email mb-0 fs-xs">13:24 AM (1 hours ago)</p>
+              </div>
+              <ul class="edit_icon d-flex align-items-center gap-4 ms-auto mb-0 list-unstyled">
+                <li>
+                  <a class="link-dark" href="#">
+                    <span class="material-icons-outlined align-middle">
+                      grade
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="link-dark" href="#">
+                    <span class="material-icons align-middle">
+                      edit
+                    </span>
+                  </a>
+                </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            </div>
+            <div class="message ms-6">
+              <p>Hi David, by default, an image is rendered inline, like a letter so it sits on
+                the same line that a, b, c and d sit on. There is space below that line for the descenders you find on
+                letters like g, j, p and q.
+              </p>
+              <p>
+                You can: 　
+              </p>
+              <ul>
+                <li>adjust the <span class="text-primary">vertical-align</span> of the image to position it elsewhere
+                  (e.g. the <span class="text-primary">middle</span> ) or</li>
+                <li>change the <span class="text-primary">display</span> so it isn’t inline.</li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="reply_box collapse multi-collapse" id="collapseExample1">
+            <textarea id="editor" name="replyTextarea" placeholder="Reply an answer…" style="display: none;"></textarea>
+            <ul class="confirmbtn d-flex justify-content-end list-unstyled mt-3">
+              <li>
+                <a href=".multi-collapse" class="btn btn-outline-primary me-3" data-bs-toggle="collapse" role="button"
+                  aria-expanded="false" aria-controls="collapseExample1 collapseExample2">Cancel</a>
+              </li>
+              <li><a href="#" class="btn btn-outline-primary">Reply</a></li>
+            </ul>
+
+          </div>
+
         </div>
       </div>
-    </nav>
+      <div class="tasklist d-flex justify-content-between align-items-center pt-3 position-relative">
+        <ul class="pagebtn list-unstyled d-flex gap-5">
+          <li><a class="pageup" href=""><span class="material-icons">
+                keyboard_arrow_left
+              </span></a></li>
+          <li><a class="pagedown" href=""><span class="material-icons">
+                keyboard_arrow_right
+              </span></a></li>
+        </ul>
+        <ul class="editbtn d-flex list-unstyled">
+          <li><a href="#" class="btn btn-outline-primary me-3">Mark as read</a></li>
+          <li>
+            <a href=".multi-collapse" class="btn btn-outline-primary" data-bs-toggle="collapse" role="button"
+              aria-expanded="false" aria-controls="collapseExample2 collapseExample1">Reply</a>
+          </li>
+        </ul>
 
-    
-<div class="container">
-  <h1 class="index__h1">這是一段話</h1>
-  <div class="alert alert-primary" role="alert">
-    A simple primary alert—check it out!
-  </div>
-  <div class="alert alert-secondary" role="alert">
-    A simple secondary alert—check it out!
-  </div>
-  <div class="alert alert-success" role="alert">
-    A simple success alert—check it out!
-  </div>
-  <div class="alert alert-danger" role="alert">
-    A simple danger alert—check it out!
-  </div>
-  <div class="alert alert-warning" role="alert">
-    A simple warning alert—check it out!
-  </div>
-  <div class="alert alert-info" role="alert">
-    A simple info alert—check it out!
-  </div>
-  <div class="alert alert-light" role="alert">
-    A simple light alert—check it out!
-  </div>
-  <div class="alert alert-dark" role="alert">
-    A simple dark alert—check it out!
-  </div>
-</div>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-
-    <footer class="footer">
-      footer
-    </footer>
+    
 
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
-  </body>
+    <script>
+      ClassicEditor
+          .create( document.querySelector( '#editor' ) )
+          .catch( error => {
+              console.error( error );
+          } );
+  </script>
+</body>
 
 </html>
