@@ -1,5 +1,85 @@
-.index__h1 {
-  color:#00cc99;
-  font-size: 20px;
-  font-weight: 400;
+//右邊主頁
+.main {
+  margin-left: 296px;
 }
+.dropdown-toggle {
+  &::after {
+    content: none;
+  }
+}
+.sub_nav {
+  margin-bottom: 44px;
+}
+.sub_navicon {
+  list-style: none;
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #198754;
+    }
+  }
+}
+.assignment_list {
+  .btn {
+    padding: 0;
+  }
+  .dropdown-menu {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 0;
+    .chapter {
+      color: #212529;
+    }
+    .message_from {
+      color: #6c757d;
+    }
+    li {
+      border-bottom: 1px solid #ced4da;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+  
+}
+
+.comments {
+  .number {
+    color: #6c757d;
+    text-align: end;
+    display: block;
+  }
+}
+.query {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem;
+}
+
+.edit_icon {
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #198754;
+    }
+  }
+}
+.pagebtn {
+  a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #198754;
+    }
+  }
+}
+.editbtn {
+  .btn {
+    padding: 0.375rem 2rem;
+  }
+}
+

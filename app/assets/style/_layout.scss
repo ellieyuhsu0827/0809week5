@@ -1,0 +1,30 @@
+// 左側主選單
+nav {
+    position: fixed;
+    min-width: 296px;
+    min-height: 100vh;
+  }
+  
+  .nav-link {
+    color: #000;
+    position: relative;
+    vertical-align: middle;
+    font-weight: bold;
+    padding: 0.5rem 2rem;
+    &:hover::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 4px;
+      height: 32px;
+      border-left: 4px solid $primary;
+    }
+  }
+  .user_photo {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+  .user_email {
+    color: $gray-600;
+  }
