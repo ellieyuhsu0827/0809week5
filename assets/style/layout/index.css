@@ -1,0 +1,88 @@
+.main {
+  margin-left: 296px;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.sub_nav {
+  margin-bottom: 44px;
+}
+
+.sub_navicon {
+  list-style: none;
+}
+
+.sub_navicon a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.sub_navicon a:hover {
+  color: #198754;
+}
+
+.assignment_list .btn {
+  padding: 0;
+}
+
+.assignment_list .dropdown-menu {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.assignment_list .dropdown-menu .chapter {
+  color: #212529;
+}
+
+.assignment_list .dropdown-menu .message_from {
+  color: #6c757d;
+}
+
+.assignment_list .dropdown-menu li {
+  border-bottom: 1px solid #ced4da;
+}
+
+.assignment_list .dropdown-menu li:last-child {
+  border-bottom: 0;
+}
+
+.comments .number {
+  color: #6c757d;
+  text-align: end;
+  display: block;
+}
+
+.query {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem;
+}
+
+.edit_icon a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.edit_icon a:hover {
+  color: #198754;
+}
+
+.pagebtn a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.pagebtn a:hover {
+  color: #198754;
+}
+
+.editbtn .btn {
+  padding: 0.375rem 2rem;
+}
+
+/*# sourceMappingURL=index.css.map */
