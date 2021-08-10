@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    week5HWform-admin
+  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+  <link href="https://fonts.google.com/specimen/Lato" rel="stylesheet">
+  <link href="https://fonts.google.com/specimen/roboto+mono?query=robo" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet">
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/29.1.0/classic/ckeditor.js"></script>
+
+</head>
+
+<body>
+  <!-- 左側主選單 -->
+  <nav class="main_nav d-flex flex-column bg-light justify-content-between pt-6 pb-5">
+    <ul class="nav flex-column ">
+      <h1 class="nav_logo ms-4 mb-4">
+        <a class="logo" href="javascript:;">
+          logo
+        </a>
+      </h1>
+
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="javascript:;">
+          <span class="material-icons me-3 ">
+            assessment
+          </span>
+          Dashboard
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="javascript:;">
+          <span class="material-icons me-3">
+            question_answer
+          </span>
+          Question
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="index.html">
+          <span class="material-icons me-3">
+            assignment
+          </span>
+          Assignment
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="javascript:;">
+          <span class="material-icons me-3">
+            video_library
+          </span>
+          Course
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="admin.html">
+          <span class="material-icons me-3">
+            supervisor_account
+          </span>
+          Admin
+        </a>
+      </li>
+      <li class="nav-item mb-4">
+        <a class="nav-link d-flex align-items-center" href="javascript:;">
+          <span class="material-icons me-3">
+            settings
+          </span>
+          Settings
+        </a>
+      </li>
+    </ul>
+    <div class="user_id d-flex align-items-center ms-5">
+      <div class="flex-shrink-0">
+        <img class="user_photo rounded-circle"
+          src="https://images.unsplash.com/photo-1514794749374-fb67509dbb7f?ixlib=rb-1.2.1&ixid=eyjhchbfawqiojeymdd9&auto=format&fit=crop&w=2000&q=80"
+          alt="...">
+      </div>
+      <div class="user_info ms-3">
+        <p class="user_name fw-bold mb-0">Andy Chen</p>
+        <p class="user_email mb-0">andy0401@mail.com</p>
+      </div>
+    </div>
+  </nav>
+  <div class="main p-5">
+    <!-- 頁面主標與下拉選單 -->
+    <div class="sub_nav d-flex align-items-center">
+        <h1 class="title fs-2 fw-bold me-6 mb-0">Admin</h1>
+        <div class="admin_modal">
+            <button class="add btn fw-bold" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <span class="material-icons text-success align-middle">
+                    add
+                </span>
+                Add New Admin
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="exampleModalLabel">New Admin</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="account border-bottom mb-4">
+                                <h5 class="fw-bold">Account</h5>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label fs-xs">Name</label>
+                                    <input class="form-control" id="name" rows="3"></input>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="email" class="form-label fs-xs">Email address</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="verification border-bottom mb-4">
+                                <h5 class="fw-bold">Verification</h5>
+                                <div class="mb-4">
+                                    <label for="name" class="form-label fw-bold">
+                                        <span class="material-icons text-danger align-middle me-1">
+                                            report_problem
+                                        </span>Unverified</label>
+                                    <button type="button" class="verifibtn btn btn-outline-primary">Send Verification
+                                        Mail</button>
+                                </div>
+                            </div>
+                            <div class="accesslevel border-bottom mb-4 pb-4">
+                                <h5 class="fw-bold">Access Level</h5>
+                                <select class="form-select fs-xs" aria-label="Default select example">
+                                    <option selected>-Choose access level-</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="customaccess">
+                                <h5 class="fw-bold">Custom Access</h5>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckIndeterminate">
+                                    <label class="form-check-label" for="flexCheckIndeterminate">
+                                        Lecture
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckIndeterminate">
+                                    <label class="form-check-label" for="flexCheckIndeterminate">
+                                        Coupon
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckIndeterminate">
+                                    <label class="form-check-label" for="flexCheckIndeterminate">
+                                        Message
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckIndeterminate">
+                                    <label class="form-check-label" for="flexCheckIndeterminate">
+                                        Setting
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value=""
+                                        id="flexCheckIndeterminate">
+                                    <label class="form-check-label" for="flexCheckIndeterminate">
+                                        Task Menu
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-primary"
+                                data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-outline-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="sub_navicon ms-auto d-flex d-grid gap-4 mb-0">
+            <li class="d-flex align-items-center">
+                <a href="">
+                    <span class="material-icons align-middle">
+                        search
+                    </span>
+                </a>
+            </li>
+            <li class="d-flex align-items-center">
+                <a href="">
+                    <span class="material-icons align-middle">
+                        notifications_active
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="admin_table mb-7">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">ID
+                        <span class="material-icons align-middle text-success">
+                            arrow_downward
+                        </span>
+                    </th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Verified</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- Modal -->
+                    <div class="modal fade" id="visibility" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog modal-dialog-centered">
+                            <div class="modal-content p-5">
+
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0">
+                                        <img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/emir.jpeg"
+                                            class="idphoto " alt="...">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <div class="idnum d-flex justify-content-between">
+                                            <p>#1</p>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <h6>Admin</h6>
+                                        <h4>Emir Wicks</h4>
+                                        <p class="fs-s text-secondary">emir.wicks@mail.com</p>
+                                        <div class="idnum d-flex justify-content-between mb-5">
+                                            <p class="mb-0">Verified</p>
+                                            <a class="text-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                <span class="material-icons expand_less">
+                                                    expand_less
+                                                </span>
+                                                <span class="material-icons expand_more">
+                                                    expand_more
+                                                </span>
+                                            </a>
+
+                                        </div>
+                                        <div class="collapse" id="collapseExample">
+                                            <ul class="d-flex list-unstyled justify-content-between mb-0">
+                                                <li>
+                                                    <button type="button" class="btn btn-outline-danger px-5">Deactivate</button></li>
+                                                <li>
+                                                  <button type="button" class="btn btn-outline-primary px-5">Edit</button>
+                                                </li>
+                                              </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <th scope="row">#1</th>
+                    <td>Emir Wicks</td>
+                    <td>emir.wicks@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" data-bs-toggle="modal" role="button" href="#visibility">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#2</th>
+                    <td>Zaina Goldsmith</td>
+                    <td>zaina.goldsmith@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#3</th>
+                    <td>Mahima Lopez</td>
+                    <td>mahima.lopez@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#4</th>
+                    <td>Pharrell Murray</td>
+                    <td>pharrell.murray@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#5</th>
+                    <td>Annika Mcbride</td>
+                    <td>annika.mcbride@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#6</th>
+                    <td>Fatimah Clark</td>
+                    <td>fatimah.clark@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#7</th>
+                    <td>Klaudia Rhodes</td>
+                    <td>klaudia.rhodes@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#8</th>
+                    <td>Tillie Lucero</td>
+                    <td>tillie.lucero@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#9</th>
+                    <td>Sabrina Stephenson</td>
+                    <td>sabrina.stephenson@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">#10</th>
+                    <td>Annie Smith</td>
+                    <td>annie.smith@mail.com</td>
+                    <td>Yes</td>
+                    <td>
+                        <ul class="list-unstyled d-flex justify-content-end mb-0 gap-4">
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        visibility
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="edit_icon" href="javascript:;">
+                                    <span class="material-icons align-middle">
+                                        edit
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <nav class="pagenav" aria-label="Page navigation">
+        <ul class="pagination justify-content-end">
+            <li class="page-item">
+                <a class="page-link" href="javascript:;" aria-label="Previous">
+                    <span class="material-icons text-success align-middle fs-6 fw-bold"
+                        aria-hidden="true">chevron_left</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="javascript:;">1</a></li>
+            <li class="page-item active"><a class="page-link" href="javascript:;">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="javascript:;" aria-label="Next">
+                    <span class="material-icons text-success align-middle fs-6 fw-bold"
+                        aria-hidden="true">chevron_right</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+
+
+
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+    <script>
+      ClassicEditor
+        .create(document.querySelector('#editor'))
+        .catch(error => {
+          console.error(error);
+        });
+    </script>
+</body>
+
+</html>
